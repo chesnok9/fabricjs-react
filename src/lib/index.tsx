@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { fabric } from 'fabric'
+import { fabric } from 'fabric-pure-browser'
 import { useFabricJSEditor, FabricJSEditor, FabricJSEditorHook } from './editor'
 
 export interface Props {
@@ -32,7 +32,7 @@ const FabricJSCanvas = ({ className, onReady }: Props) => {
     }
 
     return () => {
-      canvas.dispose()
+      canvas.clear()
       window.removeEventListener('resize', resizeCanvas)
     }
   }, [])
