@@ -70,12 +70,12 @@ const buildEditor = (
       }
     },
     deleteAll: () => {
-      canvas.getObjects().forEach((object) => canvas.remove(object))
+      canvas.getObjects().forEach((object: any) => canvas.remove(object))
       canvas.discardActiveObject()
       canvas.renderAll()
     },
     deleteSelected: () => {
-      canvas.getActiveObjects().forEach((object) => canvas.remove(object))
+      canvas.getActiveObjects().forEach((object: any) => canvas.remove(object))
       canvas.discardActiveObject()
       canvas.renderAll()
     },
@@ -83,12 +83,12 @@ const buildEditor = (
     strokeColor,
     setFillColor: (fill: string) => {
       _setFillColor(fill)
-      canvas.getActiveObjects().forEach((object) => object.set({ fill }))
+      canvas.getActiveObjects().forEach((object: any) => object.set({ fill }))
       canvas.renderAll()
     },
     setStrokeColor: (stroke: string) => {
       _setStrokeColor(stroke)
-      canvas.getActiveObjects().forEach((object) => {
+      canvas.getActiveObjects().forEach((object: any) => {
         if (object.type === TEXT.type) {
           // use stroke in text fill
           object.set({ fill: stroke })
